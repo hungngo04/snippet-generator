@@ -1,10 +1,13 @@
 from ast import keyword
+from cgitb import handler
 from fastapi import FastAPI, HTTPException
 from process import generate_snippet, generate_keyword
-
-MAX_INPUT_LENGTH = 12
+from mangum import Mangum
 
 app = FastAPI()
+handler = Mangum(app)
+
+MAX_INPUT_LENGTH = 12
 
 @app.get("/generate_snippet")
 async def generate_snippet_api(prompt: str):
