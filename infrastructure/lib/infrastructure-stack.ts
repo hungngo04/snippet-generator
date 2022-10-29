@@ -9,7 +9,7 @@ export class InfrastructureStack extends Stack {
     const apiLambda = new lambda.Function(this, "ApiFunction", {
       runtime: lambda.Runtime.PYTHON_3_9,
       code: lambda.Code.fromAsset("../app/"),
-      handler: "process_api.handler"
+      handler: "process_api.handler", 
     });
   }
 }

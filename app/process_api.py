@@ -6,7 +6,6 @@ from mangum import Mangum
 
 app = FastAPI()
 handler = Mangum(app)
-
 MAX_INPUT_LENGTH = 12
 
 @app.get("/generate_snippet")
